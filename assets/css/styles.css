@@ -1,0 +1,457 @@
+/* ================================================================
+   Campusly — Glass / Dark-first
+   تصميم زجاجي معاصر داكن بشكل افتراضي مع وضع فاتح.
+   ================================================================ */
+
+/* -------- (1) Design Tokens (Dark-first) -------- */
+:root {
+  --c-bg: #0B1020;
+  --c-bg-2: #0F1530;
+  --c-surface: rgba(255, 255, 255, 0.06);
+  --c-border: rgba(255, 255, 255, 0.12);
+  --c-text: #E5E7EB;
+  --c-muted: #94A3B8;
+  --c-primary: #14B8A6;
+  --c-accent: #8B5CF6;
+  --c-pink: #EC4899;
+  --c-blur: saturate(140%) blur(14px);
+  --c-radius: 18px;
+  --c-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* الوضع الفاتح */
+body.light {
+  --c-bg: #F5F7FB;
+  --c-bg-2: #EEF2FF;
+  --c-surface: rgba(255, 255, 255, 0.7);
+  --c-border: rgba(15, 23, 42, 0.12);
+  --c-text: #0F172A;
+  --c-muted: #475569;
+  --c-shadow: 0 14px 32px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255,255,255,.4);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "IBM Plex Sans Arabic", "Space Grotesk", system-ui, Arial, sans-serif;
+  color: var(--c-text);
+  background:
+    radial-gradient(800px 400px at 90% -10%, rgba(20,184,166,.25), transparent 60%),
+    radial-gradient(900px 500px at -10% 100%, rgba(139,92,246,.30), transparent 60%),
+    linear-gradient(180deg, var(--c-bg), var(--c-bg-2));
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Space Grotesk", "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--c-text);
+}
+
+a { color: var(--c-primary); text-decoration: none; }
+a:hover { color: #2DD4BF; }
+
+/* -------- (2) Glass Navbar (مركزية pill) -------- */
+.c-navbar {
+  background: transparent;
+  padding: 1.2rem 0;
+}
+.c-navbar .inner {
+  background: var(--c-surface);
+  backdrop-filter: var(--c-blur);
+  -webkit-backdrop-filter: var(--c-blur);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  padding: .5rem .8rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  justify-content: space-between;
+  box-shadow: var(--c-shadow);
+}
+.c-navbar .navbar-brand {
+  color: var(--c-text);
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: 0 .5rem;
+}
+.c-navbar .navbar-brand img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+.c-navbar .nav-link {
+  color: var(--c-text);
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: .95rem;
+}
+.c-navbar .nav-link:hover,
+.c-navbar .nav-link.active {
+  background: rgba(20,184,166,.15);
+  color: #2DD4BF;
+}
+
+/* -------- (3) Glass Cards عامة -------- */
+.glass {
+  background: var(--c-surface);
+  backdrop-filter: var(--c-blur);
+  -webkit-backdrop-filter: var(--c-blur);
+  border: 1px solid var(--c-border);
+  border-radius: var(--c-radius);
+  box-shadow: var(--c-shadow);
+}
+.glass-hover {
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.glass-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(20,184,166,.5);
+  box-shadow: 0 26px 70px rgba(0,0,0,.55), 0 0 0 3px rgba(20,184,166,.12);
+}
+
+/* -------- (4) Hero مع Gradient Mesh -------- */
+.c-hero {
+  padding: 4.5rem 0 3.5rem;
+  position: relative;
+}
+.c-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(600px 300px at 80% 20%, rgba(139,92,246,.30), transparent 55%),
+    radial-gradient(500px 300px at 10% 80%, rgba(20,184,166,.30), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.c-hero > .container { position: relative; z-index: 1; }
+.c-hero h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+.c-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .25rem .8rem;
+  background: rgba(20,184,166,.12);
+  border: 1px solid rgba(20,184,166,.35);
+  color: #2DD4BF;
+  border-radius: 999px;
+  font-size: .85rem;
+  margin-bottom: 1rem;
+}
+.c-hero .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2DD4BF; box-shadow: 0 0 12px #2DD4BF; }
+
+/* -------- (5) البطاقات (Event Cards) -------- */
+.c-card {
+  overflow: hidden;
+  color: var(--c-text);
+}
+.c-card .card-img-top { aspect-ratio: 16/9; object-fit: cover; }
+.c-card .card-body { padding: 1rem 1.1rem 1.1rem; }
+.c-card .badge-cat {
+  display: inline-block;
+  padding: .2rem .65rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  background: rgba(139,92,246,.15);
+  color: #C4B5FD;
+  border: 1px solid rgba(139,92,246,.35);
+}
+.c-card h3 { font-size: 1.05rem; margin: .4rem 0 .35rem; }
+.c-card p.excerpt { color: var(--c-muted); font-size: .9rem; margin: 0 0 .9rem; }
+
+/* -------- (6) الأزرار -------- */
+.btn-c-primary {
+  background: linear-gradient(135deg, #14B8A6, #8B5CF6);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: .5rem 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(20,184,166,.35);
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-c-primary:hover { color: #fff; transform: translateY(-1px); box-shadow: 0 10px 26px rgba(139,92,246,.45); }
+.btn-c-ghost {
+  background: transparent;
+  color: var(--c-text);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  padding: .5rem 1.2rem;
+  font-weight: 500;
+}
+.btn-c-ghost:hover { color: var(--c-text); border-color: rgba(20,184,166,.55); background: rgba(20,184,166,.08); }
+
+/* -------- (7) Carousel بمؤشرات رفيعة — هيرو: ارتفاع أقل (بانر أعرض) -------- */
+.c-carousel { border-radius: var(--c-radius); overflow: hidden; }
+.c-carousel .carousel-item img {
+  width: 100%;
+  aspect-ratio: 21 / 6;
+  max-height: min(220px, 36vh);
+  object-fit: cover;
+  object-position: center;
+}
+.c-carousel .carousel-indicators { margin-bottom: .5rem; }
+.c-carousel .carousel-indicators [data-bs-target] {
+  width: 28px; height: 3px; background: rgba(255,255,255,.5); border: 0; opacity: 1;
+}
+.c-carousel .carousel-indicators .active { background: #2DD4BF; }
+.c-carousel .carousel-caption {
+  background: linear-gradient(to top, rgba(11,16,32,.88), transparent);
+  right: 0; left: 0; bottom: 0; padding: 0.85rem 1rem 1rem;
+  text-align: start;
+  pointer-events: none;
+}
+.c-carousel .carousel-caption .h5 { font-size: clamp(0.95rem, 2vw, 1.1rem); margin-bottom: 0.35rem; }
+
+/* بانر الهيرو: الضغط على الصورة (والشريحة) يفتح التفاصيل */
+.c-hero-carousel-hit {
+  display: block;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: inherit;
+}
+.c-hero-carousel-hit:hover .carousel-caption {
+  background: linear-gradient(to top, rgba(11,16,32,.95), rgba(11,16,32,.2), transparent);
+}
+.c-hero-carousel-hit:focus-visible {
+  outline: 2px solid rgba(45, 212, 191, 0.85);
+  outline-offset: 2px;
+}
+
+/* -------- (8) نوع من القوائم الإحصائية -------- */
+.stat {
+  padding: 1rem 1.25rem;
+  border-radius: var(--c-radius);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+}
+.stat .num { font-family: "Space Grotesk"; font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg,#2DD4BF,#C4B5FD); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stat .lbl { color: var(--c-muted); font-size: .9rem; }
+
+/* -------- (9) الأقسام -------- */
+.section { padding: 4rem 0; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem; gap: 1rem; flex-wrap: wrap; }
+.section-head h2 { margin: 0; font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+.section-head .meta { color: var(--c-muted); font-size: .9rem; }
+
+/* -------- (10) النموذج -------- */
+.c-form .form-control, .c-form .form-select {
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  border-radius: 12px;
+}
+.c-form .form-control:focus, .c-form .form-select:focus {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(20,184,166,.6);
+  color: var(--c-text);
+  box-shadow: 0 0 0 .25rem rgba(20,184,166,.15);
+}
+.c-form .form-control::placeholder { color: rgba(148,163,184,.7); }
+
+body.light .c-form .form-control,
+body.light .c-form .form-select {
+  background: #fff;
+  color: var(--c-text);
+}
+
+/* -------- (11) Modal زجاجي -------- */
+.c-modal .modal-content {
+  background: rgba(15, 21, 48, 0.85);
+  backdrop-filter: var(--c-blur);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  border-radius: 20px;
+}
+body.light .c-modal .modal-content { background: rgba(255,255,255,.9); color: #0F172A; }
+.c-modal .modal-header, .c-modal .modal-footer { border-color: var(--c-border); }
+
+/* Stepper بسيط داخل Modal الحجز */
+.stepper { display: flex; justify-content: space-between; gap: .25rem; margin-bottom: 1rem; }
+.stepper .step {
+  flex: 1;
+  padding: .4rem .6rem;
+  text-align: center;
+  font-size: .8rem;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  color: var(--c-muted);
+}
+.stepper .step.active { color: #2DD4BF; border-color: rgba(20,184,166,.55); background: rgba(20,184,166,.08); }
+
+/* -------- (12) Offcanvas -------- */
+.c-offcanvas {
+  background: rgba(15, 21, 48, 0.92);
+  backdrop-filter: var(--c-blur);
+  color: var(--c-text);
+  border-left: 1px solid var(--c-border);
+}
+body.light .c-offcanvas { background: rgba(255,255,255,.92); color: #0F172A; }
+
+/* -------- (13) Footer — Split Panel (مختلف كلياً عن Eventra/JamiaFest) -------- */
+.c-footer {
+  margin-top: 4rem;
+  padding: 0;
+  position: relative;
+  color: var(--c-muted);
+}
+.c-footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(20,184,166,.55), rgba(139,92,246,.55), transparent);
+}
+.c-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 3.5rem 0 2rem;
+}
+@media (min-width: 992px) {
+  .c-footer__grid { grid-template-columns: 1.35fr 1fr; gap: 3rem; }
+}
+.c-footer__panel {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 22px;
+  background:
+    radial-gradient(500px 260px at 0% 0%, rgba(20,184,166,.18), transparent 55%),
+    radial-gradient(500px 260px at 100% 100%, rgba(139,92,246,.18), transparent 55%),
+    var(--c-surface);
+  backdrop-filter: var(--c-blur);
+  -webkit-backdrop-filter: var(--c-blur);
+  border: 1px solid var(--c-border);
+}
+.c-footer__panel-head {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: 1rem;
+}
+.c-footer__logo-dot {
+  width: 42px; height: 42px;
+  border-radius: 13px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, #14B8A6, #8B5CF6);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: "Space Grotesk", sans-serif;
+  box-shadow: 0 8px 22px rgba(20,184,166,.35);
+  flex-shrink: 0;
+}
+.c-footer__brand-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--c-text);
+  line-height: 1.1;
+}
+.c-footer__brand-sub {
+  color: var(--c-muted);
+  font-size: .82rem;
+  letter-spacing: .05em;
+}
+.c-footer__lead {
+  font-size: .92rem;
+  color: var(--c-muted);
+  margin-bottom: 0;
+  max-width: 42ch;
+}
+
+/* العمود الأيمن: أعمدة روابط */
+.c-footer__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding-top: .5rem;
+}
+.c-footer__col h5 {
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--c-text);
+  margin: 0 0 .9rem;
+  position: relative;
+  padding-bottom: .55rem;
+}
+.c-footer__col h5::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  width: 22px; height: 2px;
+  background: linear-gradient(90deg, #14B8A6, #8B5CF6);
+  border-radius: 2px;
+}
+.c-footer__col ul { list-style: none; padding: 0; margin: 0; }
+.c-footer__col li { margin-bottom: .45rem; }
+.c-footer__col a {
+  color: var(--c-muted);
+  font-size: .9rem;
+  transition: color .15s ease, transform .15s ease;
+  display: inline-block;
+}
+.c-footer__col a:hover {
+  color: #2DD4BF;
+  transform: translateX(-2px);
+}
+[dir="rtl"] .c-footer__col a:hover { transform: translateX(2px); }
+
+/* -------- (14) Scroll Top (glow) -------- */
+#scrollTopBtn {
+  position: fixed;
+  inset: auto 1.25rem 1.25rem auto;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #14B8A6, #8B5CF6);
+  color: #fff; border: 0;
+  display: none; place-items: center;
+  box-shadow: 0 10px 28px rgba(20,184,166,.45);
+  cursor: pointer;
+  z-index: 1040;
+  font-weight: 700;
+}
+#scrollTopBtn.show { display: grid; }
+
+/* -------- (15) Toasts -------- */
+.toast.c-toast {
+  background: rgba(15,21,48,.92);
+  color: var(--c-text);
+  border: 1px solid var(--c-border);
+  border-radius: 14px;
+  backdrop-filter: var(--c-blur);
+}
+.toast.c-toast .toast-header { background: transparent; color: var(--c-text); border-bottom-color: var(--c-border); }
+.toast.c-toast.danger { border-color: rgba(244,63,94,.45); }
+.toast.c-toast.success { border-color: rgba(20,184,166,.45); }
+
+/* رقم هاتف دولي داخل نص RTL */
+.c-contact-phone {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* -------- (16) Event Details -------- */
+.event-gallery img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  border-radius: 14px; border: 1px solid var(--c-border);
+}
+
+/* -------- (17) Responsive -------- */
+@media (max-width: 576px) {
+  .c-navbar .inner { border-radius: 16px; }
+  .c-hero { padding: 3rem 0 2rem; }
+}

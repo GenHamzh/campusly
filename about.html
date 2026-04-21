@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>عن المنصة — Campusly</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/img/campusly-logo.png" type="image/png">
+</head>
+<body>
+
+  <header>
+    <nav class="c-navbar">
+      <div class="container">
+        <div class="inner">
+          <a class="navbar-brand" href="index.html"><img src="assets/img/campusly-logo.png" alt="Campusly" width="52" height="52"> Campusly</a>
+          <div class="d-none d-lg-flex align-items-center gap-1">
+            <a class="nav-link" href="index.html">الرئيسية</a>
+            <a class="nav-link" href="events.html">الفعاليات</a>
+            <a class="nav-link" href="categories.html">التصنيفات</a>
+            <a class="nav-link" href="about.html">عن المنصة</a>
+            <a class="nav-link" href="contact.html">اتصل بنا</a>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button id="themeToggle" class="btn-c-ghost btn-sm">الوضع الفاتح</button>
+            <button class="btn-c-ghost d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">☰</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="offcanvas offcanvas-end c-offcanvas" id="mobileNav" tabindex="-1">
+    <div class="offcanvas-header"><h5 class="offcanvas-title">Campusly</h5><button class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+    <div class="offcanvas-body">
+      <a class="nav-link d-block mb-2" href="index.html">الرئيسية</a>
+      <a class="nav-link d-block mb-2" href="events.html">الفعاليات</a>
+      <a class="nav-link d-block mb-2" href="categories.html">التصنيفات</a>
+      <a class="nav-link d-block mb-2" href="about.html">عن المنصة</a>
+      <a class="nav-link d-block mb-2" href="contact.html">اتصل بنا</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- هدف المنصة -->
+    <section class="c-hero">
+      <div class="container">
+        <span class="eyebrow">About us</span>
+        <h1>نُنير الطريق لحياتك الجامعية.</h1>
+        <p class="lead col-lg-8" style="color:var(--c-muted);">
+          Campusly هي منصة فعاليات رقمية مبنية على فكرة واحدة: لا يجب أن يفوت طالبٌ أي تجربة تستحق — من ورشة تقنية إلى ليلة فنية.
+        </p>
+      </div>
+    </section>
+
+    <!-- الفريق -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>الفريق</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass glass-hover p-4 text-center">
+              <div class="mx-auto mb-3" style="width:84px;height:84px;border-radius:50%;background: conic-gradient(from 0deg, #14B8A6, #8B5CF6, #EC4899, #14B8A6); padding:3px;">
+                <div class="d-flex align-items-center justify-content-center" style="width:100%;height:100%;border-radius:50%;background:var(--c-bg);">
+                  <i class="bi bi-person-fill" style="font-size:2.25rem;color:var(--c-muted);" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="h6 mb-0">Hasna Al-Shawaf</h3>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass glass-hover p-4 text-center">
+              <div class="mx-auto mb-3" style="width:84px;height:84px;border-radius:50%;background: conic-gradient(from 90deg, #8B5CF6, #14B8A6, #EC4899, #8B5CF6); padding:3px;">
+                <div class="d-flex align-items-center justify-content-center" style="width:100%;height:100%;border-radius:50%;background:var(--c-bg);">
+                  <i class="bi bi-person-fill" style="font-size:2.25rem;color:var(--c-muted);" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="h6 mb-0">Louay Ahmad Karkoutli</h3>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass glass-hover p-4 text-center">
+              <div class="mx-auto mb-3" style="width:84px;height:84px;border-radius:50%;background: conic-gradient(from 180deg, #EC4899, #14B8A6, #8B5CF6, #EC4899); padding:3px;">
+                <div class="d-flex align-items-center justify-content-center" style="width:100%;height:100%;border-radius:50%;background:var(--c-bg);">
+                  <i class="bi bi-person-fill" style="font-size:2.25rem;color:var(--c-muted);" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="h6 mb-0">Hamza Mohammed Al-Musalama</h3>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="glass glass-hover p-4 text-center">
+              <div class="mx-auto mb-3" style="width:84px;height:84px;border-radius:50%;background: conic-gradient(from 270deg, #14B8A6, #EC4899, #8B5CF6, #14B8A6); padding:3px;">
+                <div class="d-flex align-items-center justify-content-center" style="width:100%;height:100%;border-radius:50%;background:var(--c-bg);">
+                  <i class="bi bi-person-fill" style="font-size:2.25rem;color:var(--c-muted);" aria-hidden="true"></i>
+                </div>
+              </div>
+              <h3 class="h6 mb-0">Shahd Mohammed Manafikhi</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- السياسات: Tabs -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>السياسات</h2>
+        </div>
+        <div class="glass p-4">
+          <ul class="nav nav-pills mb-3" id="policyTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-privacy" type="button" style="background:rgba(20,184,166,.15); color:#2DD4BF;">الخصوصية</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-booking" type="button" style="color:var(--c-text);">الحجز</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-conduct" type="button" style="color:var(--c-text);">قواعد السلوك</button>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab-privacy">
+              <p class="mb-0">نحترم خصوصية مستخدمينا. جميع بياناتك محمية ولا تُستخدم لأغراض تسويقية خارج المنصة. يمكنك حذف حسابك بنقرة واحدة في أي وقت.</p>
+            </div>
+            <div class="tab-pane fade" id="tab-booking">
+              <p class="mb-0">الحجز مجاني للفعاليات المجانية. يُسمح بالإلغاء قبل 24 ساعة من موعد الفعالية. الحجوزات النشطة محفوظة محلياً في متصفحك.</p>
+            </div>
+            <div class="tab-pane fade" id="tab-conduct">
+              <p class="mb-0">نحن نبني مجتمعاً محترماً ومُلهماً. أي سلوك يسيء للمشاركين سيؤدي إلى تعليق الحساب وإبلاغ إدارة الجامعة إن لزم.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="c-footer">
+    <div class="container">
+      <div class="c-footer__grid">
+        <div class="c-footer__panel">
+          <div class="c-footer__panel-head">
+            <div class="c-footer__logo-dot">C</div>
+            <div>
+              <div class="c-footer__brand-name">Campusly</div>
+              <span class="c-footer__brand-sub">Discover · Join · Shine</span>
+            </div>
+          </div>
+          <p class="c-footer__lead">منصّة فعاليات الحرم الجامعي الرقمي — مصمّمة بواسطة طلاب، لكلّ طالب يبحث عن تجربة تستحق.</p>
+        </div>
+        <div class="c-footer__columns">
+          <div class="c-footer__col">
+            <h5>المنصة</h5>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="events.html">الفعاليات</a></li>
+              <li><a href="categories.html">التصنيفات</a></li>
+              <li><a href="about.html">عن المنصة</a></li>
+              <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="c-footer__col">
+            <h5>التصنيفات</h5>
+            <ul>
+              <li><a href="events.html?cat=tech">تقنية</a></li>
+              <li><a href="events.html?cat=arts">فنون</a></li>
+              <li><a href="events.html?cat=business">أعمال</a></li>
+              <li><a href="events.html?cat=workshop">ورش</a></li>
+            </ul>
+          </div>
+          <div class="c-footer__col">
+            <h5>الدعم</h5>
+            <ul>
+              <li><a href="about.html">الخصوصية</a></li>
+              <li><a href="about.html">الحجز</a></li>
+              <li><a href="about.html">قواعد السلوك</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" aria-label="العودة للأعلى">↑</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

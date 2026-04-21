@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>التصنيفات — Campusly</title>
+  <meta name="description" content="تصفّح فعاليات Campusly حسب التصنيف.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/img/campusly-logo.png" type="image/png">
+</head>
+<body>
+
+  <header>
+    <nav class="c-navbar">
+      <div class="container">
+        <div class="inner">
+          <a class="navbar-brand" href="index.html"><img src="assets/img/campusly-logo.png" alt="Campusly" width="52" height="52"> Campusly</a>
+          <div class="d-none d-lg-flex align-items-center gap-1">
+            <a class="nav-link" href="index.html">الرئيسية</a>
+            <a class="nav-link" href="events.html">الفعاليات</a>
+            <a class="nav-link" href="categories.html">التصنيفات</a>
+            <a class="nav-link" href="about.html">عن المنصة</a>
+            <a class="nav-link" href="contact.html">اتصل بنا</a>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button id="themeToggle" class="btn-c-ghost btn-sm">الوضع الفاتح</button>
+            <button class="btn-c-ghost d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">☰</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="offcanvas offcanvas-end c-offcanvas" id="mobileNav" tabindex="-1">
+    <div class="offcanvas-header"><h5 class="offcanvas-title">Campusly</h5><button class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+    <div class="offcanvas-body">
+      <a class="nav-link d-block mb-2" href="index.html">الرئيسية</a>
+      <a class="nav-link d-block mb-2" href="events.html">الفعاليات</a>
+      <a class="nav-link d-block mb-2" href="categories.html">التصنيفات</a>
+      <a class="nav-link d-block mb-2" href="about.html">عن المنصة</a>
+      <a class="nav-link d-block mb-2" href="contact.html">اتصل بنا</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="c-hero" style="padding: 3rem 0 2rem;">
+      <div class="container">
+        <span class="eyebrow">Categories</span>
+        <h1>تصفّح التصنيفات</h1>
+        <p class="lead col-lg-8" style="color:var(--c-muted);">اختر ما يناسب اهتماماتك، ثم انتقل إلى قائمة الفعاليات المصفّاة.</p>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-lg"><a href="events.html?cat=tech" class="glass glass-hover p-3 text-center text-decoration-none d-block"><div class="num" style="font-size:1.3rem; background: linear-gradient(135deg,#2DD4BF,#C4B5FD); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:700;">Tech</div><small style="color:var(--c-muted);">تقنية</small></a></div>
+          <div class="col-6 col-md-4 col-lg"><a href="events.html?cat=business" class="glass glass-hover p-3 text-center text-decoration-none d-block"><div style="font-size:1.3rem;font-weight:700;">Biz</div><small style="color:var(--c-muted);">أعمال</small></a></div>
+          <div class="col-6 col-md-4 col-lg"><a href="events.html?cat=social" class="glass glass-hover p-3 text-center text-decoration-none d-block"><div style="font-size:1.3rem;font-weight:700;">Social</div><small style="color:var(--c-muted);">اجتماعية</small></a></div>
+          <div class="col-6 col-md-4 col-lg"><a href="events.html?cat=workshop" class="glass glass-hover p-3 text-center text-decoration-none d-block"><div style="font-size:1.3rem;font-weight:700;">Lab</div><small style="color:var(--c-muted);">ورش</small></a></div>
+          <div class="col-6 col-md-4 col-lg"><a href="events.html?cat=arts" class="glass glass-hover p-3 text-center text-decoration-none d-block"><div style="font-size:1.3rem;font-weight:700;">Arts</div><small style="color:var(--c-muted);">فنون</small></a></div>
+        </div>
+        <p class="text-center mt-4 mb-0"><a href="events.html" class="btn-c-ghost text-decoration-none">عرض كل الفعاليات</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="c-footer">
+    <div class="container">
+      <div class="c-footer__grid">
+        <div class="c-footer__panel">
+          <div class="c-footer__panel-head">
+            <div class="c-footer__logo-dot">C</div>
+            <div>
+              <div class="c-footer__brand-name">Campusly</div>
+              <span class="c-footer__brand-sub">Discover · Join · Shine</span>
+            </div>
+          </div>
+          <p class="c-footer__lead">منصّة فعاليات الحرم الجامعي الرقمي — مصمّمة بواسطة طلاب، لكلّ طالب يبحث عن تجربة تستحق.</p>
+        </div>
+        <div class="c-footer__columns">
+          <div class="c-footer__col">
+            <h5>المنصة</h5>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="events.html">الفعاليات</a></li>
+              <li><a href="categories.html">التصنيفات</a></li>
+              <li><a href="about.html">عن المنصة</a></li>
+              <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="c-footer__col">
+            <h5>التصنيفات</h5>
+            <ul>
+              <li><a href="events.html?cat=tech">تقنية</a></li>
+              <li><a href="events.html?cat=arts">فنون</a></li>
+              <li><a href="events.html?cat=business">أعمال</a></li>
+              <li><a href="events.html?cat=workshop">ورش</a></li>
+            </ul>
+          </div>
+          <div class="c-footer__col">
+            <h5>الدعم</h5>
+            <ul>
+              <li><a href="about.html">الخصوصية</a></li>
+              <li><a href="about.html">الحجز</a></li>
+              <li><a href="about.html">قواعد السلوك</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" aria-label="العودة للأعلى">↑</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
