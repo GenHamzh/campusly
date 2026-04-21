@@ -251,17 +251,40 @@ a:hover { color: #2DD4BF; }
   color: var(--c-text);
   border-radius: 12px;
 }
+.c-form .form-select {
+  /* يجبر المتصفح على قائمة منسدلة داكنة + تباين آمن لـ option في الويندوز/كروم */
+  color-scheme: dark;
+  background-color: rgba(15, 21, 48, 0.75);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.c-form .form-select option,
+.c-form .form-select optgroup {
+  background-color: var(--c-bg-2);
+  color: var(--c-text);
+}
 .c-form .form-control:focus, .c-form .form-select:focus {
   background: rgba(255,255,255,.08);
   border-color: rgba(20,184,166,.6);
   color: var(--c-text);
   box-shadow: 0 0 0 .25rem rgba(20,184,166,.15);
 }
+.c-form .form-select:focus {
+  background-color: rgba(15, 21, 48, 0.88);
+}
 .c-form .form-control::placeholder { color: rgba(148,163,184,.7); }
 
 body.light .c-form .form-control,
 body.light .c-form .form-select {
   background: #fff;
+  color: var(--c-text);
+  color-scheme: light;
+}
+body.light .c-form .form-select {
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+}
+body.light .c-form .form-select option,
+body.light .c-form .form-select optgroup {
+  background-color: #fff;
   color: var(--c-text);
 }
 
