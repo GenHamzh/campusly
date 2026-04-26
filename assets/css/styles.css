@@ -2,6 +2,7 @@
    Campusly — Glass / Dark-first
    تصميم زجاجي معاصر داكن بشكل افتراضي مع وضع فاتح.
    ================================================================ */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css");
 
 /* -------- (1) Design Tokens (Dark-first) -------- */
 :root {
@@ -432,6 +433,73 @@ body.light .c-offcanvas { background: rgba(255,255,255,.92); color: #0F172A; }
   transform: translateX(-2px);
 }
 [dir="rtl"] .c-footer__col a:hover { transform: translateX(2px); }
+
+.c-footer__extras {
+  margin-top: 1.75rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+.c-footer__contact-line {
+  font-size: .86rem;
+  color: var(--c-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .6rem;
+}
+.c-footer__contact-line a { color: var(--c-text); text-decoration: none; }
+.c-footer__contact-line a:hover { color: #2DD4BF; }
+.c-footer__contact-label {
+  color: var(--c-text);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-inline-end: .25rem;
+}
+.c-footer__sep-dot { opacity: .45; user-select: none; }
+.c-footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+.c-footer__social {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  border: 1px solid var(--c-border);
+  color: var(--c-muted);
+  background: var(--c-surface);
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.c-footer__social:hover {
+  color: #2DD4BF;
+  border-color: rgba(45, 212, 191, .5);
+  transform: translateY(-2px);
+}
+.c-footer__copyright {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: .78rem;
+  color: var(--c-muted);
+  margin: 0;
+  padding-top: .25rem;
+}
+
+.c-team-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(20, 184, 166, .4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+}
 
 /* -------- (14) Scroll Top (glow) -------- */
 #scrollTopBtn {
